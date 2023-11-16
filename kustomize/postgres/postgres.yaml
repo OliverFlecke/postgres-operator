@@ -1,8 +1,13 @@
 apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
-  name: hippo
+  name: mail
 spec:
+  users:
+    - name: mail
+      databases:
+        - mail
+      options: "SUPERUSER"
   image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-15.4-1
   postgresVersion: 15
   instances:
